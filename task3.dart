@@ -1,29 +1,24 @@
-void main() {
-  double balance = 1000.0;
-  int operation = 2; 
-  double amount = 500.0; 
+class BankAccount {
+  double _balance = 0;
 
-  switch (operation) {
-    case 1:
-      print("Your balance is: ${balance}");
-      break;
+  double get balance => _balance;
 
-    case 2:
-      balance += amount;
-      print("Deposited successfully. New balance: ${balance}");
-      break;
-
-    case 3:
-      if (amount > balance) {
-        print("Error: Not enough balance.");
-      } else {
-        balance -= amount;
-        print("Withdrawn successfully. New balance: ${balance}");
-      }
-      break;
-
-    default:
-      print("Invalid operation.");
+  set deposit(double amount) {
+    if (amount > 0) {
+      _balance += amount;
+    } else {
+      print('Invalid deposit');
+    }
   }
 }
-// This code simulates a simple banking operation where you can check your balance, deposit money, or withdraw money.
+
+void main() {
+  BankAccount account = BankAccount();
+
+  account.deposit = 500;
+  print("the balance: ${account.balance}");
+  
+  account.deposit = 200;
+  print("the balance: ${account.balance}");
+}
+// This code defines a BankAccount class with a private balance property. 

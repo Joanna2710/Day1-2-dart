@@ -1,13 +1,28 @@
-void main() {
-  var grades = [80, 70, 93];
-  var average = (grades[0] + grades[1] + grades[2]) / 3;
-
-  print("Average grade: ${average.toStringAsFixed(2)}");
-
-  if (average >= 60) {
-    print("Result: Passed");
-  } else {
-    print("Result: Failed");
+class Animal {
+  void makeSound() {
+    print('Animal makes a sound');
   }
 }
-// This program calculates the average of three grades and determines if the student passed or failed based on the average.
+
+class Dog extends Animal {
+  @override
+  void makeSound() {
+    print('Dog barks');
+  }
+}
+
+class Cat extends Animal {
+  @override
+  void makeSound() {
+    print('Cat meows');
+  }
+}
+
+void main() {
+  Dog dog = Dog();
+  Cat cat = Cat();
+
+  dog.makeSound();
+  cat.makeSound();
+}
+// // This code defines an Animal class with a method makeSound. The Dog and Cat classes extend the Animal class and override the makeSound method to provide their own implementations.

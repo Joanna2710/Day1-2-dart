@@ -1,21 +1,22 @@
-void main() {
-  double weight = 70;
-  double height = 1.75;
+class Car {
+  String brand;
+  String model;
+  int year;
 
-  double bmi = weight / (height * height);
-  String category;
+  Car(this.brand, this.model, this.year);
 
-  if (bmi < 18.5) {
-    category = "Underweight";
-  } else if (bmi < 25) {
-    category = "Normal";
-  } else if (bmi < 30) {
-    category = "Overweight";
-  } else {
-    category = "Obese";
+  void displayInfo() {
+    print('Brand: $brand, Model: $model, Year: $year');
   }
-
-  print("Your BMI is: ${bmi.toStringAsFixed(2)}");
-  print("Category: $category");
 }
-// This program calculates the Body Mass Index (BMI) based on user input for weight and height.
+
+void main() {
+  Car car1 = Car('Tesla', 'model A', 2022);
+  Car car2 = Car('Toyota', 'model B', 2021);
+  Car car3 = Car('Ford', 'model C', 2020);
+
+  car1.displayInfo();
+  car2.displayInfo();
+  car3.displayInfo();
+}
+// This code defines a Car class with properties for brand, model, and year. 
